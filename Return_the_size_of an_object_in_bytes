@@ -1,0 +1,23 @@
+
+''' sys.getsizeof(object[, default])
+
+Return the size of an object in bytes. The object can be any type of
+object. All built-in objects will return correct results, but this
+does not have to hold true for third-party extensions as it is
+implementation specific.Only the memory consumption directly attributed
+to the object is accounted for, not the memory consumption of objects it refers to.'''
+
+
+
+
+import sys
+
+def gen(n):
+    for i in range(n):
+        yield i**2
+
+x=[i**2 for i in range(100000)]
+g=gen(10000)
+
+print('The first object size is ',sys.getsizeof(x),' bytes when the function use list')
+print('The first object size is ',sys.getsizeof(g),' bytes when the function use yield') 
