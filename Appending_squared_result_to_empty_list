@@ -1,0 +1,15 @@
+
+#Taking some given numbers and show
+#squared of those numbers and append
+#to an empty list and then print all
+#of them
+
+def square_numbers(nums):
+  result=[]
+  for i in nums:
+      result.append(i*i)
+  return result
+
+my_nums=square_numbers([11,12,13,14,15,16])
+print(my_nums)
+                      
