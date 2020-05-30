@@ -1,0 +1,12 @@
+#Using generator instead of list
+#yield is one of the features of generator
+#"yield" keyword made the generator
+
+def square_numbers(nums):
+    for i in nums:
+        yield(i*i)
+
+my_nums=square_numbers([11,12,13,14,15])
+
+#it does not show [121,144,169,196,225,256]
+print (my_nums)
