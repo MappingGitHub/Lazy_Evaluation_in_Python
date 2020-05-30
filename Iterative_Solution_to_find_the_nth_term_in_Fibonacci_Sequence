@@ -1,0 +1,16 @@
+#Iterative Solution to find the nth term in Fibonacci Sequence
+
+a = 0
+b = 1
+n=int(input("Enter the number of terms in the sequence: "))
+
+print(a,end=" --- ")
+for i in range(0,n-2):  
+    i=i+1
+    c=a+b
+    a,b = b,c
+    if (c%3==0):
+        print(c,end=" --- ")
+
+print("\nThe process is done!")
+        
