@@ -1,0 +1,26 @@
+#Comparing the execution time
+
+import time
+
+t0=time.time()
+print('     ________________Executing time when using generator________________ ')
+x=(i**10000000 for i in range(3))
+for el in x:
+    print(el)
+print("################")
+t1=time.time()
+Execution_time=t1-t0
+print('The execution time was ',Execution_time, 'second')
+
+
+
+t0=time.time()
+print('     ________________Executing time when using list________________ ')
+
+x=[i**10000000 for i in range(3)]
+for el in x:
+    print(el)
+print("################")
+t1=time.time()
+Execution_time=t1-t0
+print('The execution time was ',Execution_time, 'second')
