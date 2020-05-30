@@ -1,0 +1,28 @@
+#Reading_CSV_file_using_yield
+#Covid 19 virus dataset 
+#----------------------------------------------------------------------
+def read_large_file(file_object):
+    """
+    Uses a generator to read a large file lazily
+    """
+    while True:
+        data = file_object.readline()
+        if not data:
+            break
+        yield data
+
+#----------------------------------------------------------------------
+def process_file(path):
+    """"""
+    try:
+        with open(path) as file_handler:
+            for line in read_large_file(file_handler):
+                # process line
+                print(line)
+    except (IOError, OSError):
+        print("Error opening / processing file")
+                
+#----------------------------------------------------------------------
+if __name__ == "__main__":
+    path = "time_series_covid19_confirmed_global.csv"
+    process_file(path)
