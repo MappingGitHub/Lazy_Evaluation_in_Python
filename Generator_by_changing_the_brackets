@@ -1,0 +1,12 @@
+#Creating generator by changing the brackets
+#of comprehensive List to parenthesis	
+my_nums=(x*x for x in [11,12,13,14,15])
+print (my_nums)
+
+print ("\n###########################################\n")
+
+my_nums=(x*x for x in [11,12,13,14,15])
+for num in my_nums:
+    print(num)
+
+
