@@ -1,0 +1,41 @@
+#Read_CSV_using_yield and 
+#Search for a word in csv file
+
+import time
+import csv 
+#----------------------------------------------------------------------
+Search_Name='Charlie Chaplin'     #String that you want to search
+def read_large_file(file_object):
+    """
+    Uses a generator to read a large file lazily
+    """
+    while True:
+        data = file_object.readline()
+        if not data:
+            break
+        yield data
+
+#----------------------------------------------------------------------
+def process_file(path):
+    """"""
+    try:
+        with open(path) as file_handler:
+            for line in read_large_file(file_handler):
+                # process line
+                print(line)
+                
+                #If the string you want to search is in the row
+                if Search_Name in line:
+                    print("\nWarning: ",Search_Name, "found in this .csv file")
+                    # Wait for some seconds
+                    time.sleep(3600)
+                else:
+                  print(line)               
+                 
+    except (IOError, OSError):
+        print("Error opening / processing file")
+       
+#----------------------------------------------------------------------
+if __name__ == "__main__":
+    path = "TechCrunchcontinentalUSA.csv"
+    process_file(path)
